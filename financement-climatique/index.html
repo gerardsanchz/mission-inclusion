@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Financement climatique international du Canada</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    :root {
+      --pico-primary: #BE0055;
+      --pico-primary-hover: #FF325A;
+      --pico-color: #484945;
+      --pico-h1-color: #BE0055;
+      --pico-h2-color: #484945;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; }
+
+    .header-bar {
+      background: #BE0055;
+      color: white;
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+    .header-bar h1 {
+      color: white;
+      margin-bottom: 0.25rem;
+    }
+    .header-bar p {
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 0;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    @media (min-width: 768px) {
+      .kpi-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .kpi-card {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      margin-bottom: 0;
+    }
+    .kpi-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #BE0055;
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
+    }
+    .kpi-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #484945;
+      margin-bottom: 0.25rem;
+    }
+    .kpi-footnote {
+      font-size: 0.8rem;
+      color: #999;
+    }
+
+    .chart-container {
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+    .source-note {
+      font-size: 0.8rem;
+      color: #999;
+      margin-top: 0.5rem;
+      font-style: italic;
+    }
+
+    .donut-wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    footer {
+      background: #f0f0f0;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+      color: #666;
+      margin-top: 3rem;
+    }
+    footer p {
+      margin-bottom: 0.25rem;
+    }
+
+    table {
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar">
+    <div class="container">
+      <h1>Financement climatique international du Canada</h1>
+      <p>Donn&eacute;es AidWatch Canada &mdash; janvier 2026</p>
+    </div>
+  </div>
+
+  <main class="container" x-data="dashboard()">
+
+    <!-- Section 1 -->
+    <section>
+      <h2>Le Canada recule</h2>
+      <p>L&rsquo;enveloppe de financement climatique de 5,3 G$ arrive &agrave; &eacute;ch&eacute;ance le 31 mars 2026 sans successeur annonc&eacute;.</p>
+
+      <div class="kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-number">9<sup style="font-size:1.2rem">e</sup> rang DAC</div>
+          <div class="kpi-label">724 M$ US</div>
+          <div class="kpi-footnote">sur 28 donneurs</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">13<sup style="font-size:1.2rem">e</sup> en g&eacute;n&eacute;rosit&eacute;</div>
+          <div class="kpi-label">3,0 &cent; par 100 $ RNB</div>
+          <div class="kpi-footnote">derri&egrave;re la Norv&egrave;ge (26,8 &cent;)</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">59 % de la part &eacute;quitable</div>
+          <div class="kpi-label">5,3 G$ sur 9 G$ estim&eacute;</div>
+          <div class="kpi-footnote"></div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">81 % allou&eacute;</div>
+          <div class="kpi-label">4 301,9 M$ sur 5 300 M$</div>
+          <div class="kpi-footnote">engagement 2021-2026</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">~645 M$/an</div>
+          <div class="kpi-label">disparaissent le 1<sup>er</sup> avril 2026</div>
+          <div class="kpi-footnote">aucun successeur</div>
+        </article>
+      </div>
+
+      <h3>Principaux donneurs du CAD (2023)</h3>
+      <div class="chart-container" id="chart-dac"></div>
+      <p class="source-note">Source&nbsp;: Note d&rsquo;information 13, AidWatch Canada (juillet 2025), p. 22</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+      <h2>Les OSC livrent</h2>
+      <p>La part des organisations de la soci&eacute;t&eacute; civile dans le financement climatique canadien a tripl&eacute; entre les deux engagements.</p>
+
+      <div class="kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-number">13,6 %</div>
+          <div class="kpi-label">Canal OSC (5,3 G$)</div>
+          <div class="kpi-footnote">vs 4,6 % (2,65 G$)</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">46,5 %</div>
+          <div class="kpi-label">OSC dans l&rsquo;adaptation</div>
+          <div class="kpi-footnote">3<sup>e</sup> rang DAC</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">37,2 %</div>
+          <div class="kpi-label">Part adaptation</div>
+          <div class="kpi-footnote">1 742,6 M$</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">40 %</div>
+          <div class="kpi-label">Cible adaptation</div>
+          <div class="kpi-footnote">pas encore atteinte</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">37 %</div>
+          <div class="kpi-label">Contextes hautement vuln&eacute;rables</div>
+          <div class="kpi-footnote">vs 29 % (2,65 G$)</div>
+        </article>
+      </div>
+
+      <h3>Canaux de financement&nbsp;: comparaison des deux engagements</h3>
+      <div class="chart-container" id="chart-channels"></div>
+      <p class="source-note">Source&nbsp;: page AidWatch Canada, section D (janvier 2026)</p>
+    </section>
+
+    <!-- Section 3 -->
+    <section>
+      <h2>Le climat est f&eacute;ministe</h2>
+      <p>Le Canada est au 2<sup>e</sup> rang du CAD pour le marquage genres de son financement climatique, mais la profondeur de ce marquage reste superficielle.</p>
+
+      <div class="kpi-grid">
+        <article class="kpi-card">
+          <div class="kpi-number">97 %</div>
+          <div class="kpi-label">Financement marqu&eacute; genres</div>
+          <div class="kpi-footnote">2<sup>e</sup> rang DAC</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">96 %</div>
+          <div class="kpi-label">Objectif significatif</div>
+          <div class="kpi-footnote">2021-22 &agrave; 2022-23</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number" style="color: #BE0055;">1,9 %</div>
+          <div class="kpi-label">Objectif principal</div>
+          <div class="kpi-footnote">2016-17 &agrave; 2022-23</div>
+        </article>
+        <article class="kpi-card">
+          <div class="kpi-number">4,1 %</div>
+          <div class="kpi-label">Adaptation, objectif principal genres</div>
+          <div class="kpi-footnote"></div>
+        </article>
+      </div>
+
+      <h3>R&eacute;partition du marquage genres</h3>
+      <div class="donut-wrapper">
+        <div class="chart-container" id="chart-gender" style="max-width: 400px;"></div>
+      </div>
+      <p class="source-note">Source&nbsp;: page AidWatch Canada, section E (janvier 2026)</p>
+    </section>
+
+    <!-- Section Sources -->
+    <section>
+      <h2>Notes d&rsquo;information AidWatch Canada</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Lien</th>
+          </tr>
+        </thead>
+        <tbody>
+          <template x-for="b in DATA.briefings" :key="b.number">
+            <tr>
+              <td x-text="b.number"></td>
+              <td x-text="b.title"></td>
+              <td x-text="b.date"></td>
+              <td><a :href="b.url" target="_blank" rel="noopener">PDF</a></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Source&nbsp;: AidWatch Canada (Brian Tomlinson), pr&eacute;par&eacute; pour la Coalition canadienne sur le changement climatique et le d&eacute;veloppement (C4D).</p>
+      <p>Recherche documentaire assist&eacute;e par intelligence artificielle (Claude, Anthropic). Donn&eacute;es v&eacute;rifi&eacute;es contre les sources originales.</p>
+      <p>Derni&egrave;re mise &agrave; jour&nbsp;: mars 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    const DATA = {"dac":[{"rank_2023":1,"provider":"Japan","amount_m_usd":10636.8,"share_of_total_pct":33.7,"fair_share_gni_pct":7.4,"change_since_2020":"364%","rank_generosity":2,"pp_climate_b_usd":9.97,"generosity_cents_per_100_gni":22.4,"share_real_oda_pct":35.7},{"rank_2023":2,"provider":"Germany","amount_m_usd":4416.5,"share_of_total_pct":14.0,"fair_share_gni_pct":7.8,"change_since_2020":"-2%","rank_generosity":5,"pp_climate_b_usd":3.05,"generosity_cents_per_100_gni":6.6,"share_real_oda_pct":14.1},{"rank_2023":3,"provider":"United States","amount_m_usd":4293.2,"share_of_total_pct":13.6,"fair_share_gni_pct":45.2,"change_since_2020":"240%","rank_generosity":19,"pp_climate_b_usd":2.68,"generosity_cents_per_100_gni":1.0,"share_real_oda_pct":5.5},{"rank_2023":4,"provider":"France","amount_m_usd":3277.2,"share_of_total_pct":10.4,"fair_share_gni_pct":5.2,"change_since_2020":"12%","rank_generosity":3,"pp_climate_b_usd":3.0,"generosity_cents_per_100_gni":9.6,"share_real_oda_pct":30.5},{"rank_2023":5,"provider":"Korea","amount_m_usd":1529.6,"share_of_total_pct":4.8,"fair_share_gni_pct":3.1,"change_since_2020":"988%","rank_generosity":7,"pp_climate_b_usd":1.13,"generosity_cents_per_100_gni":6.1,"share_real_oda_pct":23.9},{"rank_2023":6,"provider":"Norway","amount_m_usd":1502.8,"share_of_total_pct":4.8,"fair_share_gni_pct":0.8,"change_since_2020":"168%","rank_generosity":1,"pp_climate_b_usd":1.36,"generosity_cents_per_100_gni":26.8,"share_real_oda_pct":29.0},{"rank_2023":7,"provider":"United Kingdom","amount_m_usd":1318.6,"share_of_total_pct":4.2,"fair_share_gni_pct":5.5,"change_since_2020":"57%","rank_generosity":12,"pp_climate_b_usd":1.12,"generosity_cents_per_100_gni":3.4,"share_real_oda_pct":20.2},{"rank_2023":8,"provider":"Netherlands","amount_m_usd":1260.6,"share_of_total_pct":4.0,"fair_share_gni_pct":1.9,"change_since_2020":"33%","rank_generosity":6,"pp_climate_b_usd":0.69,"generosity_cents_per_100_gni":6.2,"share_real_oda_pct":15.9},{"rank_2023":9,"provider":"Canada","amount_m_usd":724.4,"share_of_total_pct":2.3,"fair_share_gni_pct":3.5,"change_since_2020":"84%","rank_generosity":13,"pp_climate_b_usd":0.63,"generosity_cents_per_100_gni":3.0,"share_real_oda_pct":12.7},{"rank_2023":10,"provider":"Australia","amount_m_usd":418.6,"share_of_total_pct":1.3,"fair_share_gni_pct":2.8,"change_since_2020":"116%","rank_generosity":20,"pp_climate_b_usd":0.11,"generosity_cents_per_100_gni":0.6,"share_real_oda_pct":4.2},{"rank_2023":11,"provider":"Sweden","amount_m_usd":418.4,"share_of_total_pct":1.3,"fair_share_gni_pct":1.0,"change_since_2020":"122%","rank_generosity":9,"pp_climate_b_usd":0.31,"generosity_cents_per_100_gni":5.1,"share_real_oda_pct":14.1},{"rank_2023":12,"provider":"Austria","amount_m_usd":309.2,"share_of_total_pct":1.0,"fair_share_gni_pct":0.9,"change_since_2020":"101%","rank_generosity":8,"pp_climate_b_usd":0.27,"generosity_cents_per_100_gni":5.2,"share_real_oda_pct":53.6},{"rank_2023":13,"provider":"Denmark","amount_m_usd":296.3,"share_of_total_pct":0.9,"fair_share_gni_pct":0.7,"change_since_2020":"29%","rank_generosity":10,"pp_climate_b_usd":0.19,"generosity_cents_per_100_gni":4.4,"share_real_oda_pct":11.4},{"rank_2023":14,"provider":"Switzerland","amount_m_usd":276.8,"share_of_total_pct":0.9,"fair_share_gni_pct":1.5,"change_since_2020":"6%","rank_generosity":15,"pp_climate_b_usd":0.14,"generosity_cents_per_100_gni":1.6,"share_real_oda_pct":5.3},{"rank_2023":15,"provider":"New Zealand","amount_m_usd":224.8,"share_of_total_pct":0.7,"fair_share_gni_pct":0.4,"change_since_2020":"116%","rank_generosity":4,"pp_climate_b_usd":0.21,"generosity_cents_per_100_gni":8.4,"share_real_oda_pct":33.9}],"channels_53":[{"channel":"cso","share_pct":13.6},{"channel":"government","share_pct":1.2},{"channel":"mdb","share_pct":47.5},{"channel":"other_multilateral","share_pct":34.5},{"channel":"private_sector","share_pct":3.8}],"channels_265":[{"channel":"cso","share_pct":4.6},{"channel":"government","share_pct":2.4},{"channel":"mdb","share_pct":54.0},{"channel":"other_multilateral","share_pct":37.0},{"channel":"private_sector","share_pct":1.5}],"purpose_53":[{"purpose":"adaptation","amount_m":1742.6,"share_pct":37.2},{"purpose":"loss_and_damage","amount_m":23.8,"share_pct":0.6},{"purpose":"mitigation","amount_m":2912.5,"share_pct":62.2}],"gender":[{"pledge":"5.3B 2021-2026","marker":"significant_purpose","share_pct":96.0,"period":"2021/22-2022/23"},{"pledge":"5.3B 2021-2026","marker":"principal_purpose","share_pct":1.9,"period":"2016/17-2022/23"},{"pledge":"5.3B 2021-2026","marker":"not_marked","share_pct":2.6,"period":"2016/17-2022/23"}],"vulnerability":[{"pledge":"5.3B 2021-2026","grouping":"1) Total Highly Vulnerable Contexts","adaptation_m":307.6,"mitigation_m":169.2,"total_m":476.8,"share_vulnerable_pct":37.0},{"pledge":"5.3B 2021-2026","grouping":"2) Total Other Vulnerable Contexts","adaptation_m":291.1,"mitigation_m":527.3,"total_m":819.4,"share_vulnerable_pct":63.0},{"pledge":"5.3B 2021-2026","grouping":"3) Total Proxy Allocation to Vulnerable\nCountries and People","adaptation_m":599.7,"mitigation_m":696.5,"total_m":1296.2,"share_vulnerable_pct":null},{"pledge":"5.3B 2021-2026","grouping":"4) Total Principal Purpose Climate\nDisbursements","adaptation_m":938.7,"mitigation_m":1799.1,"total_m":2398.8,"share_vulnerable_pct":null},{"pledge":"2.65B 2015-2021","grouping":"1) Total Highly Vulnerable Contexts","adaptation_m":149.4,"mitigation_m":193.1,"total_m":342.5,"share_vulnerable_pct":29.0},{"pledge":"2.65B 2015-2021","grouping":"2) Total Other Vulnerable Contexts","adaptation_m":290.3,"mitigation_m":565.3,"total_m":855.6,"share_vulnerable_pct":71.0},{"pledge":"2.65B 2015-2021","grouping":"3) Total Proxy Allocation to Vulnerable\nCountries and People","adaptation_m":439.7,"mitigation_m":758.4,"total_m":1198.1,"share_vulnerable_pct":null},{"pledge":"2.65B 2015-2021","grouping":"4) Total Principal Purpose Climate\nDisbursements","adaptation_m":767.9,"mitigation_m":1826.4,"total_m":2594.3,"share_vulnerable_pct":null}],"briefings":[{"number":1,"title":"5.3B Projects to Date","date":"2026-01","url":"http://aidwatchcanada.ca/wp-content/uploads/2026/01/1-January-2026-Briefing-Note-1-5.3B-Projects-to-date-1.pdf"},{"number":2,"title":"Accelerating Coal Transition","date":"2023-11","url":"http://aidwatchcanada.ca/wp-content/uploads/2023/11/3.-November-Briefing-Note-2-Accelerating-Coal-Transition.pdf"},{"number":3,"title":"Green Climate Fund","date":"2025-03","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/03/Note-3-March-2025-Briefing-Green-Climate-Fund.pdf"},{"number":4,"title":"FinDev Canada Climate-Related Projects","date":"2025-02","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/09/Note-4-February-2025-FinDev-Canada-Climate-Related-Projects.pdf"},{"number":5,"title":"Estimating Total Canadian Climate Finance","date":"2023-01","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/02/Note-5-January-2023-Estimating-Total-Cdn-Climate-Finance-1.pdf"},{"number":6,"title":"Adaptation","date":"2026-01","url":"http://aidwatchcanada.ca/wp-content/uploads/2026/01/Note-6-January-2026-Briefing-Adaptation.pdf"},{"number":7,"title":"Gender Equality","date":"2025-04","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/04/Note-7-April-2025-Briefing-Gender-Equality.pdf"},{"number":8,"title":"Canadian Civil Society and Climate Finance","date":"2025-04","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/04/Note-8-April-2025-Cdn-Civil-Society-and-Climate-Finance.pdf"},{"number":9,"title":"Vulnerability","date":"2025-04","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/04/Note-9-April-2025-Briefing-Note-9-Vulnerability-Briefing-Note.pdf"},{"number":10,"title":"Loss and Damage","date":"2024-12","url":"http://aidwatchcanada.ca/wp-content/uploads/2024/12/Note-10-December-2024-Briefing-Changes-Saved-Loss-and-Damange.pdf"},{"number":11,"title":"Climate Finance and Nature-Based Solutions","date":"2024-10","url":"http://aidwatchcanada.ca/wp-content/uploads/2024/10/7.-October-2024-Briefing-Note-11-Climate-Finance-and-Nature-Based-Solutions-1.pdf"},{"number":12,"title":"Agriculture and IFAD","date":"2024-12","url":"http://aidwatchcanada.ca/wp-content/uploads/2024/12/Note-12-December-2024-Briefing-Note-12-Ag-and-IFAD.pdf"},{"number":13,"title":"International Comparisons","date":"2025-07","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/07/Note-13-July-2025-Briefing-International-Comparisons.pdf"},{"number":14,"title":"Bridgetown Initiative","date":"2024-02","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/02/Note-14-February-2024-Bridgetown-Initiative.pdf"},{"number":15,"title":"Debt and Climate","date":"2025-07","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/07/Note-15-Debt-and-Climate-Briefing-Note.pdf"},{"number":16,"title":"Overview of 2.65B Pledge","date":"2025-07","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/07/Briefing-Note-16-Overview-of-2.65B-Pledge.pdf"},{"number":17,"title":"MDB Special Funds Summary and Projects","date":"2025-07","url":"http://aidwatchcanada.ca/wp-content/uploads/2025/07/Briefing-Note-17-MDB-Special-Funds-Summary-and-Projects-copy.pdf"}]};
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js"></script>
+
+  <script>
+    function dashboard() {
+      return {
+        DATA: DATA,
+        init() {
+          this.$nextTick(() => {
+            this.renderCharts();
+          });
+        },
+        renderCharts() {
+          // Chart 1: DAC horizontal bar
+          const dacSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 400,
+            "data": {"values": DATA.dac},
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+              "y": {"field": "provider", "type": "nominal", "sort": "-x", "title": null},
+              "x": {"field": "amount_m_usd", "type": "quantitative", "title": "Millions $ US (2023)"},
+              "color": {
+                "condition": {"test": "datum.provider === 'Canada'", "value": "#BE0055"},
+                "value": "#007391"
+              },
+              "tooltip": [
+                {"field": "provider", "title": "Pays"},
+                {"field": "amount_m_usd", "title": "Montant (M$ US)", "format": ",.1f"},
+                {"field": "rank_generosity", "title": "Rang g\u00e9n\u00e9rosit\u00e9"},
+                {"field": "generosity_cents_per_100_gni", "title": "\u00a2 / 100$ RNB"}
+              ]
+            }
+          };
+          vegaEmbed('#chart-dac', dacSpec, {actions: false});
+
+          // Chart 2: Channels grouped bar
+          const channelTranslations = {
+            "mdb": "Banques multilat\u00e9rales",
+            "other_multilateral": "Autres multilat\u00e9raux",
+            "cso": "Soci\u00e9t\u00e9 civile",
+            "private_sector": "Secteur priv\u00e9",
+            "government": "Gouvernements"
+          };
+          function translateChannel(ch) {
+            return channelTranslations[ch] || ch;
+          }
+          const channelData = [
+            ...DATA.channels_53.map(d => ({...d, pledge: "5,3 G$ (2021-2026)", channel_fr: translateChannel(d.channel)})),
+            ...DATA.channels_265.map(d => ({...d, pledge: "2,65 G$ (2015-2021)", channel_fr: translateChannel(d.channel)}))
+          ];
+
+          const channelSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": "container",
+            "height": 300,
+            "data": {"values": channelData},
+            "mark": {"type": "bar", "cornerRadiusEnd": 4},
+            "encoding": {
+              "y": {"field": "channel_fr", "type": "nominal", "title": null, "sort": ["-x"]},
+              "x": {"field": "share_pct", "type": "quantitative", "title": "Part (%)"},
+              "color": {"field": "pledge", "type": "nominal", "scale": {"range": ["#007391", "#7DC3B9"]}, "title": "Engagement"},
+              "yOffset": {"field": "pledge"},
+              "tooltip": [
+                {"field": "channel_fr", "title": "Canal"},
+                {"field": "share_pct", "title": "%", "format": ".1f"},
+                {"field": "pledge", "title": "Engagement"}
+              ]
+            }
+          };
+          vegaEmbed('#chart-channels', channelSpec, {actions: false});
+
+          // Chart 3: Gender donut
+          const genderSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "width": 300,
+            "height": 300,
+            "data": {"values": [
+              {"marker": "Objectif significatif", "share": 96},
+              {"marker": "Objectif principal", "share": 1.9},
+              {"marker": "Non marqu\u00e9", "share": 2.6}
+            ]},
+            "mark": {"type": "arc", "innerRadius": 80, "cornerRadius": 4},
+            "encoding": {
+              "theta": {"field": "share", "type": "quantitative"},
+              "color": {"field": "marker", "type": "nominal", "scale": {"domain": ["Objectif significatif", "Objectif principal", "Non marqu\u00e9"], "range": ["#7DC3B9", "#BE0055", "#484945"]}, "title": null},
+              "tooltip": [{"field": "marker"}, {"field": "share", "title": "%"}]
+            }
+          };
+          vegaEmbed('#chart-gender', genderSpec, {actions: false});
+        }
+      };
+    }
+  </script>
+
+</body>
+</html>
